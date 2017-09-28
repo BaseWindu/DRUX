@@ -4,6 +4,11 @@ export default class TextField {
     console.log(this.options)
   } 
 
+  setPosition(coords) {
+    console.log(window.innerWidth)
+    console.log(coords.get3dPosition(this.options.layout))
+  }
+
   init() {
     let container = document.createElement('div')
 
@@ -15,9 +20,10 @@ export default class TextField {
     let textField = document.createElement( 'input' )
     textField.type = 'text'
     textField.placeholder = this.options.placeHolder
-    textField.id = 'textField'
+    textField.id = this.options.id
     container.append(textField)
-    // create the object3d for this card
+
+    // create the object3d
     let cssObject = new THREE.CSS3DObject( container )
 
     this.object = cssObject
