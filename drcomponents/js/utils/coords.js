@@ -31,13 +31,21 @@ export default class Coords {
     let screenSize = 'large' 
 
     let width = layout[screenSize] * (window.innerWidth / 12)
-    /*
+    let xPosition = width + this.location.x
 
-    if((width + this.location.x) >= window.innerWidth) {
-      
+    console.log(width)
+    console.log(xPosition)
+    console.log(window.innerWidth)
+
+    if(xPosition < window.innerWidth) {
+      this.location.x = xPosition
     }
-    if(vector.x * 1.1 >= window.
-    */
+    else {
+      this.location.x = 0
+      this.location.y += 100 
+    }
+
+    console.log(this.location)
 
     let vector = new THREE.Vector3()
     vector.x = width

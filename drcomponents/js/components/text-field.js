@@ -5,8 +5,7 @@ export default class TextField {
   } 
 
   setPosition(coords) {
-    console.log(window.innerWidth)
-    console.log(coords.get3dPosition(this.options.layout))
+    let position = coords.get3dPosition(this.options.layout)
   }
 
   init() {

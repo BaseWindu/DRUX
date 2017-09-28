@@ -24,8 +24,8 @@ export default class SelectList {
     // create the object3d for this element
     let cssObject = new THREE.CSS3DObject(container )
 
-      this.object = cssObject
+    this.object = cssObject
 
-      return(this.object)
+    return(this.object)
   }
 }
