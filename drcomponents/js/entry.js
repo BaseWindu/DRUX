@@ -1,4 +1,5 @@
 import Card from './components/card'
+import TextField from './components/text-field'
 
 export default class Entry {
   constructor() {
@@ -21,6 +22,23 @@ export default class Entry {
       height: '800',
       text: 'It works'
     })
+
+    let name = new TextField({
+      id: 'name',
+      placeHolder: 'Filter by Name...',
+      label: 'Name'
+    })
+
+    this.scene.add(name.init())
+
+    let streetName = new TextField({
+      id: 'streetName',
+      placeHolder: 'Filter by Street Name...',
+      label: 'Street Name'
+    })
+
+    this.scene.add(streetName.init())
+
 
     this.scene.add(card.init())
 
