@@ -20,7 +20,7 @@ export default class Button {
     let text = document.createTextNode('Take Control')
     button.append(text)
 
-    button.style.backgroundColor = '#82b1ff'
+    button.style.backgroundColor = '#77A3B9'
     button.style.padding = '25px 30px'
     button.style.borderRadius = '5px'
     button.style.textAlign = 'center'

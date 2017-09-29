@@ -3,6 +3,7 @@ import Card from './components/card'
 import TextField from './components/text-field'
 import SelectList from './components/select-list'
 import Button from './components/button'
+import Table from './components/table'
 
 export default class Entry {
   constructor() {
@@ -96,6 +97,19 @@ export default class Entry {
     })
 
     this.scene.add(button.init())
+
+    let table = new Table({
+      id: 'Table',
+      data: [
+        {
+          name: 'Test'
+        }
+      ]
+
+    })
+
+    this.scene.add(table.init())
+      
 
     this.renderer.render(this.scene, this.camera)
 

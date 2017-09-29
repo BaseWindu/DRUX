@@ -16,6 +16,9 @@ export default class TextField {
     label.append(this.options.label)
     container.append(label)
 
+    label.style.borderRadius = '5px'
+    label.style.padding = '20px 30px'
+
     let textField = document.createElement( 'input' )
     textField.type = 'text'
     textField.placeholder = this.options.placeHolder
