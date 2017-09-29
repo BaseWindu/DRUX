@@ -16,6 +16,17 @@ export default class Button {
     button.id = this.options.id
     button.value = this.options.value
     container.append(button)
+
+    let text = document.createTextNode('Take Control')
+    button.append(text)
+
+    button.style.backgroundColor = '#82b1ff'
+    button.style.padding = '25px 30px'
+    button.style.borderRadius = '5px'
+    button.style.textAlign = 'center'
+    button.style.color = 'white'
+    button.style.textTransform = 'uppercase'
+    button.style.display = 'inline-block'
   
 
     
