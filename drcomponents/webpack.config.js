@@ -19,7 +19,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CopyWebpackPlugin([
+   new CopyWebpackPlugin([
       { from: 'node_modules/three/build/three.min.js', to: 'app/js' },
       { from: 'node_modules/three/examples/js/renderers/CSS3DRenderer.js', to: 'app/js' },
     ])
