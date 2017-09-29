@@ -1,10 +1,18 @@
 export default class Coords {
   constructor(camera) {
     this.camera = camera
+    this.X_DEFAULT = 0
+    this.Y_DEFAULT = 50
+    this.Z_DEFAULT = 0
+    this.Y_STEP = 50
+    this.resetLocation()
+  }
+
+  resetLocation() {
     this.location = {
-      x: 100,
-      y: 50,
-      z: 0
+      x: this.X_DEFAULT,
+      y: this.Y_DEFAULT,
+      z: this.Z_DEFAULT 
     }
   }
 
@@ -32,26 +40,30 @@ export default class Coords {
       y: object.y,
       z: 0
     })
-    console.log(width3d)
   }
 
   get3dPosition(layout) {
     // Find out if we're s, m, l
-    let screenSize = 'large' 
+    // small - smaller than 768 px
+    // medium - smaller than 1024 px
+    // large - larger than 1024 px
+ 
+    let screenSize = '' 
+    if(window.innerWidth < 768) {
+      screenSize = 'small'
+    }
+    else if(window.innerWidth < 1024) {
+      screenSize = 'medium'
+    }
+    else {
+      screenSize = 'large'
+    }
 
     let width = layout[screenSize] * (window.innerWidth / 12)
     let xMin = this.location.x
     let xMax = width + this.location.x
 
-    console.log({
-      elementWidth: width,
-      xMin: xMin,
-      xMax: xMax,
-      y: this.location.y,
-      windowWidth: window.innerWidth
-    })
-
-    let x = xMin
+    let x = xMin + (width / 2)
     let y = this.location.y
 
     let coords3d = this.get3dFrom2d({
@@ -64,22 +76,13 @@ export default class Coords {
       this.location.x = xMax
     }
     else {
-      this.location.x = 100
-      this.location.y += 100 
+      this.location.x = this.X_DEFAULT
+      this.location.y += this.Y_STEP
     }
-
-    let objectWidth = this.get3dFrom2d({
-      x: - (width / 2),
-      y: 0,
-      z: 0
-    })
-
-    console.log({
-      objectWidth: objectWidth
-    })
 
     return(coords3d)
   }
+
 }
 
 
