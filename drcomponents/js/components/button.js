@@ -6,6 +6,7 @@ export default class Button {
 
   setPosition(coords) {
     let position = coords.get3dPosition(this.options.layout)
+    this.object.position.set(position.x, position.y, position.z)
   }
   
   init() {
@@ -19,9 +20,9 @@ export default class Button {
 
     
   // create the object3d
-    let cssobject = new three.css3dobject( container )
+    let cssObject = new THREE.CSS3DObject( container )
 
-    this.object = cssobject
+    this.object = cssObject
 
     return(this.object)
   }

@@ -2,6 +2,7 @@ import Coords from './utils/coords'
 import Card from './components/card'
 import TextField from './components/text-field'
 import SelectList from './components/select-list'
+import Button from './components/button'
 
 export default class Entry {
   constructor() {
@@ -84,11 +85,24 @@ export default class Entry {
 
     this.scene.add(selectList.init())
 
+    let button = new Button({
+      id: 'Button',
+      value: 'Button',
+      layout:{
+        small: 12,
+        medium: 12,
+        large: 6
+      }
+    })
+
+    this.scene.add(button.init())
+
     this.renderer.render(this.scene, this.camera)
 
     name.setPosition(this.coords)
     streetName.setPosition(this.coords)
     selectList.setPosition(this.coords)
+    button.setPosition(this.coords)
 
     this.renderer.render(this.scene, this.camera)
 
