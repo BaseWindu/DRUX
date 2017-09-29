@@ -4,6 +4,11 @@ export default class SelectList {
       console.log(this.options)
   } 
 
+  setPosition(coords) {
+    let position = coords.get3dPosition(this.options.layout)
+    this.object.position.set(position.x, position.y, position.z)
+  }
+
   init() {
     // create the dom Element
     let container  = document.createElement( 'div' )

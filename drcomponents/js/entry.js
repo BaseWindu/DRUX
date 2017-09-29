@@ -5,11 +5,12 @@ import SelectList from './components/select-list'
 
 export default class Entry {
   constructor() {
-    this.coords = new Coords()
     this.scene = new THREE.Scene()
 
     this.camera = new THREE.PerspectiveCamera( 70, window.innerWidth/window.innerHeight, 1, 10000 )
     this.camera.position.z = 1000
+
+    this.coords = new Coords(this.camera)
 
     this.renderer = new THREE.CSS3DRenderer()
     this.renderer.setSize( window.innerWidth, window.innerHeight )
@@ -19,6 +20,7 @@ export default class Entry {
 
     this.container = document.getElementById('container')
     this.container.appendChild(this.renderer.domElement)
+
       
     /*
     let card = new Card({
@@ -30,8 +32,6 @@ export default class Entry {
     this.scene.add(card.init()) 
     */
 
-    
-    /*
     let name = new TextField({
       id: 'name',
       placeHolder: 'Filter by Name...',
@@ -42,8 +42,6 @@ export default class Entry {
         large: 6
       }
     })
-
-    name.setPosition(this.coords)
 
     this.scene.add(name.init())
 
@@ -59,7 +57,7 @@ export default class Entry {
     })
 
     this.scene.add(streetName.init())
-    */
+
     let selectList = new SelectList({
       id: 'Jurisdiction',
       data: [
@@ -83,8 +81,17 @@ export default class Entry {
       }
 
     })
+
     this.scene.add(selectList.init())
+
     this.renderer.render(this.scene, this.camera)
+
+    name.setPosition(this.coords)
+    streetName.setPosition(this.coords)
+    selectList.setPosition(this.coords)
+
+    this.renderer.render(this.scene, this.camera)
+
   }
 }
 

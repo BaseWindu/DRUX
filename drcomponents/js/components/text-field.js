@@ -1,11 +1,11 @@
 export default class TextField {
   constructor (options) {
     this.options = options
-    console.log(this.options)
   } 
 
   setPosition(coords) {
     let position = coords.get3dPosition(this.options.layout)
+    this.object.position.set(position.x, position.y, position.z)
   }
 
   init() {
