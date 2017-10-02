@@ -4,7 +4,7 @@ import TextField from './components/text-field'
 import SelectList from './components/select-list'
 import Button from './components/button'
 import Table from './components/table'
-
+import Data from './components/data'
 export default class Entry {
   constructor() {
     this.scene = new THREE.Scene()
@@ -98,17 +98,28 @@ export default class Entry {
 
     this.scene.add(button.init())
 
+    let dataComponent = new Data()
+    let data = dataComponent.init()
     let table = new Table({
       id: 'Table',
-      data: [
-        {
-          name: 'Test'
+      data: data,
+      design: {
+        name: {
+          title: 'name',
+          description: 'address'
+        },
+        header: {
+          name: 'Name',
+          widget: 'Average Temperature',
+          control: 'Control'
         }
-      ]
+      }
+      
 
     })
 
     this.scene.add(table.init())
+    
       
 
     this.renderer.render(this.scene, this.camera)
