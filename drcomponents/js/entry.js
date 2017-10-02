@@ -5,6 +5,9 @@ import SelectList from './components/select-list'
 import Button from './components/button'
 import Table from './components/table'
 import Data from './components/data'
+import Date from './components/date'
+import Search from './components/search'
+
 export default class Entry {
   constructor() {
     this.scene = new THREE.Scene()
@@ -62,6 +65,7 @@ export default class Entry {
 
     let selectList = new SelectList({
       id: 'Jurisdiction',
+      label: 'Jurisdiction',
       data: [
         {
           name: 'Charlotte',
@@ -120,7 +124,31 @@ export default class Entry {
 
     this.scene.add(table.init())
     
-      
+    let date = new Date({
+      id: 'Date',
+      placeholder: 'mm/dd/yyyy',
+      label: 'Date',
+      layout: {
+        small: 12,
+        medium: 12,
+        large: 6
+      }
+    })
+
+    this.scene.add(date.init())
+
+    let search = new Search({
+      id: 'Search',
+      placeholder: 'What are you looking for?',
+      label: 'Search',
+      layout: {
+        small: 12,
+        medium: 12,
+        large: 6
+      }
+    })
+
+    this.scene.add(search.init())
 
     this.renderer.render(this.scene, this.camera)
 
@@ -128,6 +156,8 @@ export default class Entry {
     streetName.setPosition(this.coords)
     selectList.setPosition(this.coords)
     button.setPosition(this.coords)
+    date.setPosition(this.coords)
+    search.setPosition(this.coords)
 
     this.renderer.render(this.scene, this.camera)
 

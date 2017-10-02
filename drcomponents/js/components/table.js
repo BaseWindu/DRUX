@@ -37,6 +37,7 @@ export default class Table {
       tableRow.style.backgroundColor = '#007aa1'
       tableRow.style.fontSize = '24px'
       tableRow.style.color = '#000000'
+      tableRow.style.borderTop = '1px solid'
       if((index + 1) % 2 === 0) {
         tableRow.style.backgroundColor = '#F7F5F5'
       }
