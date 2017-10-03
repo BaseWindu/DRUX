@@ -31,6 +31,17 @@ export default class Entry {
       
     let navBar = new NavBar({
       id: 'NavBar',
+      data: [
+        {
+          name: 'Individual View'
+        },
+        {
+          name: 'Group View'
+        },
+        {
+          name: 'Device Type'
+        }
+      ],
       layout: {
         small: 12,
         medium: 12,

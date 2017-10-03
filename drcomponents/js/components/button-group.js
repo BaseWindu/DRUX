@@ -16,6 +16,8 @@ export default class ButtonGroup {
     let buttonGroup = document.createElement('button-group')
     buttonGroup.id = this.options.id
     container.append(buttonGroup)
+    buttonGroup.style.border = '1px solid'
+    buttonGroup.style.padding = '10px 24px'
 
     let hourly = document.createElement('button')
     buttonGroup.append(hourly)

@@ -16,10 +16,18 @@ export default class TextField {
     label.append(this.options.label)
     container.append(label)
 
-    label.style.borderRadius = '5px'
-    label.style.padding = '3px'
-    label.style.outline = '1px solid grey'
+    label.style.borderRadius = '10px 0 0 10px'
+    label.style.position = 'absolute'
+    label.style.top = '0'
+    label.style.left = '0'
+    label.style.bottom = '0'
+    label.style.padding = '0 20px'
+    label.style.outline = 'none'
     label.style.backgroundColor = '#D8D8D8'
+    label.style.height = '40px'
+    label.style.inlineHeight = '40px'
+    label.style.color = 'white'
+    label.style.textAlign = 'center'
 
     let textField = document.createElement( 'input' )
     textField.type = 'text'
@@ -28,9 +36,14 @@ export default class TextField {
     container.append(textField)
 
     textField.style.backgroundColor = '#F7F5F5'
-    textField.style.borderRadius = '3px'
-    textField.style.padding = '5px'
-    textField.style.outline = '1px hidden'
+    textField.style.display = 'inline-block'
+    textField.style.borderRadius = '10px'
+    textField.style.padding = '10px 10px 10px 100px'
+    textField.style.outline = 'none'
+    textField.style.width = '500px'
+    textField.style.height = '40px'
+    textField.style.boxSizing = 'border-box'
+    textField.style.textAlign = 'center'
 
     // create the object3d
     let cssObject = new THREE.CSS3DObject( container )
