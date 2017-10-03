@@ -25,6 +25,10 @@ export default class NavBar {
     navBar.style.display = 'inline-block'
     navBar.style.float = 'left'
 
+    let smartLife = document.createElement('img')
+    smartLife.src = '../images/smart-life.png'
+    navBar.append(smartLife)
+
     let individual = document.createElement('li')
     individual.name = this.options.name
     navBar.append(individual)

@@ -9,6 +9,7 @@ import Data from './components/data'
 import Date from './components/date'
 import Search from './components/search'
 import ButtonGroup from './components/button-group'
+import Paginator from './components/paginator'
 
 export default class Entry {
   constructor() {
@@ -183,6 +184,17 @@ export default class Entry {
     })
 
     this.scene.add(buttonGroup.init())
+    
+    let paginator = new Paginator({
+      id: 'paginator',
+      layout: {
+        small: 12,
+        medium: 12,
+        large: 6
+      }
+    })
+
+    this.scene.add(paginator.init())
       
 
 
@@ -197,6 +209,7 @@ export default class Entry {
     date.setPosition(this.coords)
     search.setPosition(this.coords)
     buttonGroup.setPosition(this.coords)
+    paginator.setPosition(this.coords)
 
     this.renderer.render(this.scene, this.camera)
 
