@@ -1,4 +1,5 @@
 import Coords from './utils/coords'
+import NavBar from './components/nav-bar'
 import Card from './components/card'
 import TextField from './components/text-field'
 import SelectList from './components/select-list'
@@ -28,6 +29,16 @@ export default class Entry {
     this.container.appendChild(this.renderer.domElement)
 
       
+    let navBar = new NavBar({
+      id: 'NavBar',
+      layout: {
+        small: 12,
+        medium: 12,
+        large: 6
+      }
+    })
+    
+    this.scene.add(navBar.init())
     /*
     let card = new Card({
       width: '800',
@@ -165,9 +176,9 @@ export default class Entry {
 
 
 
-
     this.renderer.render(this.scene, this.camera)
 
+    navBar.setPosition(this.coords)
     name.setPosition(this.coords)
     streetName.setPosition(this.coords)
     selectList.setPosition(this.coords)
