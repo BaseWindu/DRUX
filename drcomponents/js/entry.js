@@ -7,6 +7,7 @@ import Table from './components/table'
 import Data from './components/data'
 import Date from './components/date'
 import Search from './components/search'
+import ButtonGroup from './components/button-group'
 
 export default class Entry {
   constructor() {
@@ -126,7 +127,7 @@ export default class Entry {
     
     let date = new Date({
       id: 'Date',
-      placeholder: 'mm/dd/yyyy',
+      placeHolder: 'mm/dd/yyyy',
       label: 'Date',
       layout: {
         small: 12,
@@ -150,6 +151,21 @@ export default class Entry {
 
     this.scene.add(search.init())
 
+    let buttonGroup = new ButtonGroup({
+      id: 'Button Group',
+      layout: {
+        small: 12,
+        medium: 12,
+        large: 6
+      }
+    })
+
+    this.scene.add(buttonGroup.init())
+      
+
+
+
+
     this.renderer.render(this.scene, this.camera)
 
     name.setPosition(this.coords)
@@ -158,6 +174,7 @@ export default class Entry {
     button.setPosition(this.coords)
     date.setPosition(this.coords)
     search.setPosition(this.coords)
+    buttonGroup.setPosition(this.coords)
 
     this.renderer.render(this.scene, this.camera)
 
