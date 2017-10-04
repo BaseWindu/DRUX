@@ -12,20 +12,30 @@ export default class ButtonGroup {
   
   init() {
     let container = document.createElement('div')
+    
+    let label = document.createElement('label')
+    label.for = this.options.id
+    label.append(this.options.label)
+    container.append(label)
 
     let buttonGroup = document.createElement('button-group')
     buttonGroup.id = this.options.id
     container.append(buttonGroup)
-    buttonGroup.style.border = '1px solid'
     buttonGroup.style.padding = '10px 24px'
 
     let hourly = document.createElement('button')
+    let hourlyText = document.createTextNode('Hourly')
+    hourly.append(hourlyText)
     buttonGroup.append(hourly)
 
     let day = document.createElement('button')
+    let dayText = document.createTextNode('Day')
+    day.append(dayText)
     buttonGroup.append(day)
 
     let week = document.createElement('button')
+    let weekText = document.createTextNode('Week')
+    week.append(weekText)
     buttonGroup.append(week)
 
 

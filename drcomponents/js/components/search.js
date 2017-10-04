@@ -17,6 +17,7 @@ export default class Search {
     label.for = this.options.id
     label.append(this.options.label)
     container.append(label)
+    label.style.padding = '25px'
     
     let search = document.createElement('input')
     search.id = this.options.id

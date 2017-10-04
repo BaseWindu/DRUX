@@ -18,7 +18,7 @@ export default class SelectList {
     label.append(this.options.label)
     container.append(label)
 
-    label.style.padding = '5px'
+    label.style.padding = '25px'
 
     let selectList = document.createElement('select')
     selectList.id = this.options.id

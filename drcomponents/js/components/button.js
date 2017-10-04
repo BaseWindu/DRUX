@@ -12,24 +12,38 @@ export default class Button {
   init() {
     let container = document.createElement('div')
 
-    let button = document.createElement('button')
-    button.id = this.options.id
-    button.value = this.options.value
-    container.append(button)
+    let stat = document.createElement('button')
+    stat.id = this.options.id
+    stat.value = this.options.value
+    container.append(stat)
+    
+    let text1 = document.createTextNode('Status')
+    stat.append(text1)
+    
+    stat.style.backgroundColor = 'white'
+    stat.style.padding = '25px 30px'
+    stat.style.borderRadius = '5px'
+    stat.style.textAlign = 'center'
+    stat.style.color = 'black'
+    stat.style.textTransform = 'uppercase'
+    stat.style.display = 'inline-block'
+    
+    let control = document.createElement('button')
+    control.id = this.options.id
+    control.value = this.options.value
+    container.append(control)
 
     let text = document.createTextNode('Take Control')
-    button.append(text)
+    control.append(text)
 
-    button.style.backgroundColor = '#77A3B9'
-    button.style.padding = '25px 30px'
-    button.style.borderRadius = '5px'
-    button.style.textAlign = 'center'
-    button.style.color = 'white'
-    button.style.textTransform = 'uppercase'
-    button.style.display = 'inline-block'
+    control.style.backgroundColor = '#77A3B9'
+    control.style.padding = '25px 30px'
+    control.style.borderRadius = '5px'
+    control.style.textAlign = 'center'
+    control.style.color = 'white'
+    control.style.textTransform = 'uppercase'
+    control.style.display = 'inline-block'
   
-
-    
   // create the object3d
     let cssObject = new THREE.CSS3DObject( container )
 

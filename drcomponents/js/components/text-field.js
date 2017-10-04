@@ -26,7 +26,7 @@ export default class TextField {
     label.style.backgroundColor = '#D8D8D8'
     label.style.height = '40px'
     label.style.inlineHeight = '40px'
-    label.style.color = 'white'
+    label.style.color = 'black'
     label.style.textAlign = 'center'
 
     let textField = document.createElement( 'input' )

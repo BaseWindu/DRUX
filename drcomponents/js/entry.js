@@ -10,6 +10,7 @@ import Date from './components/date'
 import Search from './components/search'
 import ButtonGroup from './components/button-group'
 import Paginator from './components/paginator'
+import Slider from './components/slider'
 
 export default class Entry {
   constructor() {
@@ -176,6 +177,7 @@ export default class Entry {
 
     let buttonGroup = new ButtonGroup({
       id: 'Button Group',
+      label: 'Bulk Temperature Averages',
       layout: {
         small: 12,
         medium: 12,
@@ -195,6 +197,18 @@ export default class Entry {
     })
 
     this.scene.add(paginator.init())
+
+    
+    let slider = new Slider({
+      id: 'switch',
+      layout: {
+        small: 12,
+        medium: 12,
+        large: 6
+      }
+    })
+
+    this.scene.add(slider.init())
       
 
 
@@ -210,6 +224,7 @@ export default class Entry {
     search.setPosition(this.coords)
     buttonGroup.setPosition(this.coords)
     paginator.setPosition(this.coords)
+    slider.setPosition(this.coords)
 
     this.renderer.render(this.scene, this.camera)
 

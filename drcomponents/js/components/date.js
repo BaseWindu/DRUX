@@ -19,7 +19,7 @@ export default class Date {
     label.append(this.options.label)
     container.append(label)
 
-    label.style.padding = '10px'
+    label.style.padding = '25px'
 
     let date = document.createElement('select')
     date.id = this.options.id
